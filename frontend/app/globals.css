@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #f6f8f7;
+    color: #17211b;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+}
+
+button,
+input,
+select {
+    font: inherit
+}
+
+.shell {
+    display: flex;
+    min-height: 100vh
+}
+
+.sidebar {
+    width: 245px;
+    background: #10251b;
+    color: #eaf5ee;
+    padding: 28px 18px;
+    position: fixed;
+    inset: 0 auto 0 0
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    margin: 0 0 8px
+}
+
+.brand span {
+    color: #02c8fa
+}
+
+.sub {
+    color: #9eb3a5;
+    font-size: 12px;
+    margin-bottom: 30px
+}
+
+.nav button {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #c9d8ce;
+    text-align: left;
+    cursor: pointer
+}
+
+.nav button.active,
+.nav button:hover {
+    background: #1d2a3a;
+    color: #fff
+}
+
+.main {
+    margin-left: 245px;
+    width: calc(100% - 245px);
+    padding: 30px 34px
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 28px
+}
+
+.muted {
+    color: #717a80
+}
+
+.pill {
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #e3f6e9;
+    color: #194f71;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px
+}
+
+.card {
+    background: white;
+    border: 1px solid #e3e9e5;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(16, 37, 27, .04)
+}
+
+.metric {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 8px
+}
+
+.label {
+    font-size: 13px;
+    color: #748179
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 18px;
+    margin-top: 18px
+}
+
+.card h2 {
+    font-size: 16px;
+    margin: 0 0 16px
+}
+
+.chart {
+    height: 270px
+}
+
+.system {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid #edf1ee
+}
+
+.system:first-of-type {
+    border-top: 0
+}
+
+.status {
+    font-size: 12px;
+    font-weight: 700
+}
+
+.ok {
+    color: #216082
+}
+
+.warn {
+    color: #b16a00
+}
+
+.bad {
+    color: #bd3838
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.table th,
+.table td {
+    padding: 13px 8px;
+    text-align: left;
+    border-bottom: 1px solid #edf1ee;
+    font-size: 13px
+}
+
+.btn {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: #1f6d9d;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.btn.secondary {
+    background: #edf3ef;
+    color: #244334
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.form {
+    max-width: 600px
+}
+
+.form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 14px 0 6px
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #dbe3de;
+    border-radius: 10px;
+    background: #fff
+}
+
+.login {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #101625, #1d3449)
+}
+
+.login-box {
+    width: min(430px, 92vw);
+    background: #fff;
+    border-radius: 20px;
+    padding: 34px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .2)
+}
+
+.login-box h1 {
+    margin-top: 0
+}
+
+.alert {
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #fff4e1;
+    margin-bottom: 10px
+}
+
+.small {
+    font-size: 12px
+}
+
+@media(max-width:900px) {
+    .sidebar {
+        width: 190px
+    }
+
+    .main {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 22px
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:620px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto
+    }
+
+    .shell {
+        display: block
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%
+    }
+
+    .grid {
+        grid-template-columns: 1fr
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr
+    }
+
+    .top {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column
+    }
+}
